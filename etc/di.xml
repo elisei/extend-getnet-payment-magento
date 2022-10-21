@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Getnet\PaymentMagento\Gateway\Request\CcPaymentDataRequest">
+        <plugin name="add_pre_auth" 
+                type="O2TI\ExtendGetnetPaymentMagento\Plugin\Gateway\Request\PreAuthCcPaymentDataRequest" 
+                sortOrder="70"/>
+    </type>
+    
+    <preference for="Getnet\PaymentMagento\Gateway\Http\Client\AcceptPaymentClient"
+                type="O2TI\ExtendGetnetPaymentMagento\Plugin\Gateway\Http\Client\PreAuthAcceptPaymentClient"/>
+    
+    <type name="O2TI\ExtendGetnetPaymentMagento\Plugin\Gateway\Http\Client\PreAuthAcceptPaymentClient">
+        <arguments>
+            <argument name="logger" xsi:type="object">PaymentMagentoLogger</argument>
+        </arguments>
+    </type>
+</config>

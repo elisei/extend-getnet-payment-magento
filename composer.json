@@ -1,0 +1,22 @@
+{
+    "name":        "o2ti/extend-getnet-payment-magento",
+    "description": "Implementa pré autorização no meio de pagamento da Getnet.",
+    "type":        "magento2-module",
+    "version":     "2.0.0",
+    "license":     "MIT",
+    "keywords":
+    [
+        "magento", "payment", "getnet"
+    ],
+    "autoload":
+    {
+        "files":
+        [
+            "registration.php"
+        ],
+        "psr-4":
+        {
+            "O2TI\\ExtendGetnetPaymentMagento\\": ""
+        }
+    }
+}
